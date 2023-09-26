@@ -11,12 +11,17 @@ const DonationDetails = () => {
     console.log(card, id, card.button_bg);
 
     const notify = () => {
-        saveDonation(parseInt(id));
+        saveDonation((id));
         toast("Thank you for your kindness");
     }
     return (
         <div className="max-w-6xl mx-auto mt-10">
-         {/* <div  className='bg-green-600'>hghjyj</div>  */}
+        <div>
+        <div  className='bg-green-600'>hghjyj</div>
+        <div  className='bg-lime-600'>hghjyj</div>
+        <div  className='bg-cyan-600'>hghjyj</div>
+        <div className="bg-red-600">fdg</div>
+        </div>
                 <div>
                     <div className="relative">
                         <img src={card.image} alt="" className="w-full h-[500px]" />

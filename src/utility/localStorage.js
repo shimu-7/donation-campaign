@@ -8,7 +8,7 @@ const getStoredDonation = () =>{
 
 const saveDonation = id =>{
     const storedDonation = getStoredDonation();
-    const exist = storedDonation.find(donationId => DonationId == id)
+    const exist = storedDonation.find(donationId => donationId == id)
     if(!exist){
         storedDonation.push(parseInt(id));
         localStorage.setItem('donations',JSON.stringify(storedDonation))
