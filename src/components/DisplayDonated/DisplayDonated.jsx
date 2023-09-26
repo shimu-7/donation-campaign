@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 
 const DisplayDonated = ({ card }) => {
-    const { title, card_bg, category_bg, category, text_color, image } = card
+    const { title, card_bg, category_bg, category, text_color,price,button_bg, image } = card
     return (
         <div>
             {/* <div>
@@ -19,11 +21,16 @@ const DisplayDonated = ({ card }) => {
             </div> */}
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img src={image} className="w-[250px] h-full" alt="Movie" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                <div className={`${card_bg} flex-grow`}>
+                    <div className="card-body">
+                        <div className={`${category_bg} w-24 text-center rounded-md ps-1`}>
+                            <p className={text_color}>{category}</p>
+                        </div>
+                        <h2 className={`text-lg font-medium `}>{title}</h2>
+                        <h2 className={text_color}>${price}</h2>
+                        <Link to={`/details/${card.id}`}>
+                            <button className={`${button_bg} px-4 py-2  mt-2 text-white font-medium rounded-md`}>View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
