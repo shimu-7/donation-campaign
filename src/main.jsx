@@ -9,6 +9,7 @@ import Root from './components/Root/Root';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home/Home';
 import Donation from './components/Donation/Donation';
+import DonationDetails from './components/DonationDetails/DonationDetails';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,17 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+        
+      },
+      {
+        path: "/details/:id",
+        element: <DonationDetails></DonationDetails>,
+        loader: ()=>fetch('../info.json')
       },
       {
         path: "/donation",
-        element: <Donation></Donation>
+        element: <Donation></Donation>,
+        loader: ()=>fetch('../info.json')
       }
     ]
 
