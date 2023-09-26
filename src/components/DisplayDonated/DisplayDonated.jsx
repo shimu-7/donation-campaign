@@ -21,7 +21,7 @@ const DisplayDonated = ({ card }) => {
                 <h2 className="bg-cyan-600">jvhfkj</h2>
             </div> */}
             <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img src={image} className="w-[250px] h-full" alt="Movie" /></figure>
+                <figure><img src={image} className="w-[250px] h-[200px]" alt="Movie" /></figure>
                 <div className={`${card_bg} flex-grow`}>
                     <div className="card-body">
                         <div className={`${category_bg} w-24 text-center rounded-md ps-1`}>

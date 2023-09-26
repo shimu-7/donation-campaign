@@ -3,11 +3,10 @@ import DisplayDonationCard from "../DisplayDonationCard/DisplayDonationCard";
 
 const Banner = () => {
     const [cards, setCards] = useState([]);
-    //const [searchInfo, setSearchInfo] = useState('')
     const [displayCard, setDisplayCard] = useState([])
 
     useEffect(() => {
-        fetch('../info.json')
+        fetch('info.json')
             .then(res => res.json())
             .then(data => {setCards(data)
                 setDisplayCard(data)

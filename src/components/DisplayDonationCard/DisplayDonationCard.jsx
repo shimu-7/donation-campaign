@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 
 const DisplayDonationCard = ({ card }) => {
-    const { title, card_bg, category_bg, category, text_color, image } = card
-    //console.log(card_bg,category_bg,text_color);
-    //console.log(card); 
+    const { title, card_bg, category_bg, category, text_color, image } = card 
     
     return (
         <Link to={`/details/${card.id}`}>
