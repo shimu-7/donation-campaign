@@ -7,7 +7,7 @@ const Donation = () => {
     const cards = useLoaderData();
 
     const [donations, setDonations] = useState([]);
-    const [allDonation, setAllDonation] = useState([]);
+    
     const [num , setNum] = useState(4);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Donation = () => {
         if (donationIds.length > 0) {
             const donated = cards.filter(card => donationIds.includes(card.id))
             setDonations(donated);
-            setAllDonation(donated);
+            
         }
 
     }, [cards])

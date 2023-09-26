@@ -4,16 +4,23 @@ import DisplayDonationCard from "../DisplayDonationCard/DisplayDonationCard";
 const Banner = () => {
     const [cards, setCards] = useState([]);
     //const [searchInfo, setSearchInfo] = useState('')
-    
+    const [displayCard, setDisplayCard] = useState([])
+
     useEffect(() => {
         fetch('../info.json')
             .then(res => res.json())
-            .then(data => setCards(data))
+            .then(data => {setCards(data)
+                setDisplayCard(data)
+            })
     }, [])
-    const handleSubmit = e =>{
-
+    const handleSubmit = e => {
+        e.preventDefault();
+        const value = e.target.search.value.toLowerCase();
+        const searched = cards.filter(card => card.category.toLowerCase() === value);
+        setDisplayCard(searched)
+        console.log(displayCard)
     }
-
+    console.log(displayCard);
     return (
         <div>
             {/* <div>
@@ -47,7 +54,7 @@ const Banner = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap:5">
                     {
 
-                        cards.map(card => <DisplayDonationCard key={card.id} card={card}></DisplayDonationCard>)
+                        displayCard.map(card => <DisplayDonationCard key={card.id} card={card}></DisplayDonationCard>)
                     }
                 </div>
             </div>

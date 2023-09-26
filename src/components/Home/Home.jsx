@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            this is donation section.
+            
         </div>
     );
 };
